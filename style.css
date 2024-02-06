@@ -54,16 +54,67 @@ button {
   align-items: center;
   list-style: none;
   column-gap: 30px;
+  cursor: pointer;
+}
+
+.section--hero .navbar__dropdown {
+  position: relative;
+}
+
+.section--hero .navbar__dropdown-header {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .section--hero .navbar__dropdown-title {
   color: #000;
   font-weight: 500;
-  margin-right: 10px;
+}
+
+.section--hero .navbar__dropdown-icon {
+  transition: 300ms;
+}
+
+.section--hero .navbar__dropdown.open .navbar__dropdown-icon {
+  transform: rotate(180deg);
+  transition: 200ms;
+}
+
+.section--hero .navbar__dropdown.open .navbar__dropdown-menu {
+  opacity: 1;
+  transition: 300ms;
 }
 
 .section--hero .navbar__dropdown-menu {
+  opacity: 0;
+  top: 32px;
   display: none;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  transition: 300ms;
+}
+
+.section--hero .navbar__dropdown-item {
+  padding: 15px 20px;
+  width: 250px;
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+  cursor: default;
+}
+
+.section.section--hero .navbar__dropdown-item:hover {
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.section--hero .navbar__dropdown-link {
+  text-decoration: none;
+  color: #000;
 }
 
 .section--hero .navbar__link {
