@@ -3,9 +3,16 @@
   padding: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   height: 6000px;
   font-family: poppins;
+  background-color: #d7f5dc;
+  overflow-x: hidden;
 }
 
 body.debug * {
@@ -13,7 +20,6 @@ body.debug * {
 }
 
 .container {
-  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -24,6 +30,13 @@ button {
 /* ======== _hero ======== */
 .section--hero {
   background-color: #d7f5dc;
+}
+
+.section--hero .navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .section--hero .container {
@@ -89,7 +102,6 @@ button {
 .section--hero .navbar__dropdown-menu {
   opacity: 0;
   top: 32px;
-  display: none;
   border-radius: 5px;
   overflow: hidden;
   position: absolute;
@@ -97,6 +109,11 @@ button {
   display: flex;
   flex-direction: column;
   transition: 300ms;
+  pointer-events: none;
+}
+
+.section--hero .navbar__dropdown.open .navbar__dropdown-menu {
+  pointer-events: visible;
 }
 
 .section--hero .navbar__dropdown-item {
@@ -139,10 +156,162 @@ button {
 .section--hero .navbar__button--login {
   border: 2px solid #20b15a;
   padding: 10px 25px;
+  transition: 200ms;
+}
+
+.section--hero .navbar__button--login:hover {
+  background-color: #20b15a;
+  color: white;
 }
 
 .section--hero .navbar__button--register {
   background-color: #20b15a;
   color: white;
   padding: 10px 20px;
+}
+
+/* ======== Breakpoints ======== */
+
+/* ======== xs: extra small ======== */
+@media (width < 576px) {
+  .section--hero .container {
+    padding: 32px;
+    box-sizing: border-box;
+  }
+}
+
+/* ======== sm: small ======== */
+@media (576px <= width < 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* ======== md: medium ======== */
+@media (768px <= width < 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* ======== max: 992px ======== */
+@media screen and (max-width: 992px) {
+  .section--hero .container {
+    position: relative;
+  }
+
+  .section--hero .navbar__item {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100dvh;
+    /* background-color: #20b15a; */
+    background-color: #f5f5f5;
+    box-shadow: -1px 0 4px rgba(0, 0, 0, 0.08);
+    transition: 300ms;
+    align-items: start;
+    padding: 64px 32px;
+    box-sizing: border-box;
+  }
+
+  .section--hero .navbar__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 24px;
+  }
+
+  .section--hero .navbar__button-wrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    width: 100%;
+  }
+
+  .section--hero .navbar__button {
+    width: 100%;
+  }
+
+  .section--hero .navbar__toggle {
+    display: flex;
+    width: 25px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 999;
+  }
+
+  .section--hero .navbar__toggle span {
+    height: 3px;
+    display: block;
+    background-color: #212832;
+    border-radius: 10px;
+  }
+
+  .section--hero .navbar .navbar__toggle span:nth-child(1) {
+    transition: 300ms;
+  }
+
+  .section--hero .navbar .navbar__toggle span:nth-child(2) {
+    opacity: 1;
+    transition: 200ms;
+  }
+
+  .section--hero .navbar .navbar__toggle span:nth-child(3) {
+    transition: 300ms;
+  }
+
+  .section--hero .navbar.active .navbar__toggle span:nth-child(1) {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    transition: 300ms;
+  }
+
+  .section--hero .navbar.active .navbar__toggle span:nth-child(2) {
+    opacity: 0;
+    transition: 300ms;
+  }
+
+  .section--hero .navbar.active .navbar__toggle span:nth-child(3) {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+    transition: 300ms;
+  }
+
+  .section--hero .navbar.active .navbar__item {
+    right: 0;
+    transition: 300ms;
+  }
+}
+
+/* ======== min: 992px ======== */
+@media screen and (min-width: 992px) {
+  .section--hero .navbar__toggle {
+    display: none;
+  }
+}
+
+/* ======== lg: large ======== */
+@media (992px <= width < 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* ======== xl: extra large ======== */
+@media (1200px <= width < 1440px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* ======== xxl: extra extra large ======== */
+@media (width >= 1440px) {
+  .container {
+    max-width: 1240px;
+  }
 }

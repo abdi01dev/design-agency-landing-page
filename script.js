@@ -1,6 +1,8 @@
 // ======== outline debug ========
-document.body.addEventListener('dblclick', () => {
-  // document.body.classList.toggle('debug');
+document.body.addEventListener('keyup', e => {
+  if (e.key === 'a') {
+    document.body.classList.toggle('debug');
+  }
 });
 
 // ======== hover debug ========
@@ -49,4 +51,11 @@ dropdownHeader.addEventListener('mouseleave', () => {
   if (dropdownOpen) {
     window.addEventListener('mousemove', dropdownMouseLeaveEventHandler);
   }
+});
+
+// navbar toggle
+const navbar = document.querySelector('.navbar');
+const navbarToggle = document.querySelector('.navbar__toggle');
+navbarToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
 });
