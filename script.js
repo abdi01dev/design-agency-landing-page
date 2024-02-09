@@ -60,7 +60,7 @@ navbarToggle.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
 
-// Partners Scroller
+// ======== partners scroller ========
 const scroller = document.querySelector('.scroller');
 const scrollerInner = scroller.querySelector('.scroller__inner');
 
@@ -73,3 +73,8 @@ if (window.screen.width < 992) {
     scrollerInner.appendChild(duplicatedItem);
   });
 }
+
+// ======== body padding ========
+
+// document.body.style.paddingTop = navbar.clientHeight + 'px';
+// console.log(navbar.clientHeight);
