@@ -59,3 +59,17 @@ const navbarToggle = document.querySelector('.navbar__toggle');
 navbarToggle.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
+
+// Partners Scroller
+const scroller = document.querySelector('.scroller');
+const scrollerInner = scroller.querySelector('.scroller__inner');
+
+if (window.screen.width < 992) {
+  scroller.setAttribute('data-animated', true);
+
+  const scrollerContent = Array.from(scrollerInner.children);
+  scrollerContent.forEach(item => {
+    const duplicatedItem = item.cloneNode(true);
+    scrollerInner.appendChild(duplicatedItem);
+  });
+}

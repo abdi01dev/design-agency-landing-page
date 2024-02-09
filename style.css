@@ -29,9 +29,6 @@ button {
 }
 
 /* ======== _header ======== */
-.section--header {
-}
-
 .section--header .navbar {
   position: fixed;
   background-color: #d7f5dc;
@@ -208,9 +205,8 @@ button {
   background-color: #f8fff9;
 }
 
-.section--partners .container {
+.section--partners .scroller__inner {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding: 44px 0;
 }
@@ -254,19 +250,6 @@ button {
   }
 }
 
-/* ======== max: 768px ======== */
-@media screen and (max-width: 768px) {
-  /* ======== sm partner ======== */
-  .section--partners {
-    padding: 0 24px;
-  }
-
-  .section--partners .container {
-    gap: 32px;
-    justify-content: center;
-  }
-}
-
 /* ======== md: medium ======== */
 @media (768px <= width < 992px) {
   .container {
@@ -274,7 +257,7 @@ button {
   }
 }
 
-/* ======== max: 992px ======== */
+/* ======== max-md (992px) ======== */
 @media screen and (max-width: 992px) {
   /* ======== mx-md header ======== */
   .section--header .navbar .container {
@@ -373,9 +356,27 @@ button {
     align-items: center;
     row-gap: 32px;
   }
+
+  /* ======== mx-md partner ======== */
+  .section--partners {
+    padding: 0 24px;
+  }
+
+  .section--partners .scroller__inner {
+    width: max-content;
+    display: flex;
+    justify-content: unset;
+    column-gap: 100px;
+    padding: 20px 0;
+  }
+
+  .section--partners .scroller[data-animated='true'] .scroller__inner {
+    animation: scroller 10s linear infinite;
+    -webkit-animation: scroller 10s linear infinite;
+  }
 }
 
-/* ======== min: 992px ======== */
+/* ======== min-md (992px) ======== */
 @media screen and (min-width: 992px) {
   /* ======== min-md header ======== */
   .section--header .navbar__toggle {
@@ -416,5 +417,16 @@ button {
 @media (width >= 1440px) {
   .container {
     max-width: 1240px;
+  }
+}
+
+/* ======== Animation ======== */
+@keyframes scroller {
+  to {
+    transform: translateX(calc(-50% - 50px));
+    -webkit-transform: translateX(calc(-50% - 50px));
+    -moz-transform: translateX(calc(-50% - 50px));
+    -ms-transform: translateX(calc(-50% - 50px));
+    -o-transform: translateX(calc(-50% - 50px));
   }
 }
