@@ -309,6 +309,33 @@ button {
   margin-left: 10px;
 }
 
+/* ======== _achievements ======== */
+.section--achievements {
+  background-color: white;
+}
+
+.section--achievements .container {
+  padding: 80px 0;
+  display: grid;
+  /* justify-content: center; */
+}
+
+.section--achievements .card {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.section--achievements .card__title {
+  font-weight: 500;
+  margin: 10px 0 15px;
+}
+
+.section--achievements .card__achievement-value {
+  font-size: 40px;
+  font-weight: 900;
+  color: #20b15a;
+}
+
 /* ======== Breakpoints ======== */
 
 /* ======== xs: extra small ======== */
@@ -348,6 +375,15 @@ button {
   .section--features .heading {
     font-size: 26px;
     text-wrap: balance;
+  }
+
+  /* ======== xs achievements ======== */
+  .section--achievements div.container {
+    grid-template-columns: 260px;
+  }
+
+  .section--achievements div.card:nth-child(odd) {
+    border-right: none;
   }
 }
 
@@ -491,6 +527,17 @@ button {
     animation: scroller 10s linear infinite;
     -webkit-animation: scroller 10s linear infinite;
   }
+
+  /* ======== max-md achievements ======== */
+  .section--achievements .container {
+    justify-content: center;
+    row-gap: 24px;
+    grid-template-columns: 260px 260px;
+  }
+
+  .section--achievements .card:nth-child(odd) {
+    border-right: 1px solid rgba(196, 196, 196, 0.5);
+  }
 }
 
 /* ======== min-md (992px) ======== */
@@ -503,6 +550,15 @@ button {
   /* ======== min-md hero ======== */
   .section--hero .hero__cta {
     margin-bottom: 80px;
+  }
+
+  /* ======== min-md achievements ======== */
+  .section--achievements .container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .section--achievements .card:not(:last-child) {
+    border-right: 1px solid rgba(196, 196, 196, 0.5);
   }
 }
 

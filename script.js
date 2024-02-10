@@ -64,7 +64,7 @@ navbarToggle.addEventListener('click', () => {
 const scroller = document.querySelector('.scroller');
 const scrollerInner = scroller.querySelector('.scroller__inner');
 
-if (window.screen.width < 992) {
+if (window.innerWidth < 992) {
   scroller.setAttribute('data-animated', true);
 
   const scrollerContent = Array.from(scrollerInner.children);
