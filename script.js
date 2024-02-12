@@ -78,3 +78,33 @@ if (window.innerWidth < 992) {
 
 // document.body.style.paddingTop = navbar.clientHeight + 'px';
 // console.log(navbar.clientHeight);
+
+// ======== testimonial control ========
+const nextButton = document.querySelector('button.next');
+const previousButton = document.querySelector('button.previous');
+const sectionTestimonial = document.querySelector('section.section--testimonial');
+const testimonialWrapper = document.querySelector('.testimonial__wrapper');
+const testimonialWrapperInner = document.querySelector('.testimonial__wrapper-inner');
+
+nextButton.addEventListener('click', () => {
+  resetButtonClass();
+  sectionTestimonial.classList.add('next');
+  testimonialWrapper.scrollLeft = 10000;
+});
+
+previousButton.addEventListener('click', () => {
+  resetButtonClass();
+  sectionTestimonial.classList.add('previous');
+
+  testimonialWrapper.scrollLeft = 0;
+});
+
+function resetButtonClass() {
+  setTimeout(() => {
+    sectionTestimonial.classList.remove('next');
+    sectionTestimonial.classList.remove('previous');
+  }, 1000);
+
+  sectionTestimonial.classList.remove('next');
+  sectionTestimonial.classList.remove('previous');
+}
