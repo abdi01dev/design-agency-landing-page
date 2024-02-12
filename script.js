@@ -79,7 +79,7 @@ if (window.innerWidth < 992) {
 // document.body.style.paddingTop = navbar.clientHeight + 'px';
 // console.log(navbar.clientHeight);
 
-// ======== testimonial control ========
+// ======== desktop testimonial control ========
 const nextButton = document.querySelector('button.next');
 const previousButton = document.querySelector('button.previous');
 const sectionTestimonial = document.querySelector('section.section--testimonial');
@@ -108,3 +108,21 @@ function resetButtonClass() {
   sectionTestimonial.classList.remove('next');
   sectionTestimonial.classList.remove('previous');
 }
+
+// ======== mobile testimonial control ========
+const arrowsControl = Array.from(document.querySelectorAll('.card .card__control'));
+arrowsControl.forEach(arrow => {
+  arrow.addEventListener('click', e => {
+    if (e.target.classList.contains('left')) {
+      if (!e.target.classList.contains('ignore')) {
+        console.dir(e.target.parentNode.parentNode.offsetWidth);
+        testimonialWrapper.scrollLeft -= e.target.parentNode.parentNode.offsetWidth;
+      }
+    } else if (e.target.classList.contains('right')) {
+      if (!e.target.classList.contains('ignore')) {
+        console.dir(e.target.parentNode.parentNode.offsetWidth);
+        testimonialWrapper.scrollLeft += e.target.parentNode.parentNode.offsetWidth;
+      }
+    }
+  });
+});
