@@ -567,6 +567,96 @@ button {
   object-fit: cover;
 }
 
+/* ======== _subscribe ======== */
+.section--subscribe {
+  background-color: white;
+}
+
+.section--subscribe .container {
+  padding-top: 91px;
+  padding-bottom: 133px;
+}
+
+.section--subscribe .heading-wrapper {
+  text-align: center;
+}
+
+.section--subscribe .sub-heading {
+  font-size: 20;
+  font-weight: 500;
+  color: #20b15a;
+}
+
+.section--subscribe .heading {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 22px 0 6px;
+  text-wrap: balance;
+}
+
+.section--subscribe .description {
+  font-weight: 500;
+  color: #8b8b8b;
+}
+
+.section--subscribe .form {
+  position: relative;
+  max-width: 596px;
+  border: 2px solid #000;
+  height: 64px;
+  margin: auto;
+  border-radius: 14px;
+  overflow: hidden;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  margin-top: 40px;
+}
+
+.section--subscribe .form__placeholder {
+  position: absolute;
+  color: #8b8b8b;
+  z-index: 99;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.section--subscribe .form__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 6px;
+  box-sizing: border-box;
+}
+
+.section--subscribe .form__button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  color: white;
+  background-color: #f55f1d;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  font-weight: 500;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
 /* ======== Breakpoints ======== */
 
 /* ======== xs: extra small ======== */
