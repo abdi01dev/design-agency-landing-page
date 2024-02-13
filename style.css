@@ -9,7 +9,6 @@ body {
 }
 
 body {
-  height: 6000px;
   font-family: poppins;
   overflow-x: hidden;
   padding-top: 111px;
@@ -657,6 +656,101 @@ button {
   -o-border-radius: 14px;
 }
 
+/* ======== _footer ======== */
+.section--footer {
+  background-color: #00ca72;
+}
+
+.section--footer .container {
+  padding-top: 57px;
+  padding-bottom: 26px;
+}
+
+.section--footer .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section--footer .brand {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.section--footer .highlight {
+  color: #f55f1d;
+  font-weight: 700;
+}
+
+.section--footer .footer__description {
+  font-size: 20px;
+  max-width: 328px;
+  margin-top: 26px;
+  margin-bottom: 12px;
+}
+
+.section--footer .footer__social-media {
+  display: flex;
+  column-gap: 16px;
+  list-style: none;
+}
+
+.section--footer .footer__social-media a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #20b15a;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.section--footer .copyright {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.section--footer .col-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.section--footer .footer__link ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+  list-style: none;
+}
+
+.section--footer .footer__link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section--footer .footer__link a:hover {
+  text-decoration: underline;
+}
+
+.section--footer .footer__address .address {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+}
+
+.section--footer .footer__address .country {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 /* ======== Breakpoints ======== */
 
 /* ======== xs: extra small ======== */
@@ -705,6 +799,39 @@ button {
 
   .section--achievements div.card:nth-child(odd) {
     border-right: none;
+  }
+
+  /* ======== xs footer ======== */
+  .section--footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section--footer .container .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section--footer .container .footer__info {
+    text-align: center;
+  }
+
+  .section--footer .container .footer__info ul {
+    justify-content: center;
+  }
+
+  .section--footer .footer__link {
+    text-align: center;
+  }
+
+  .section--footer .footer__address {
+    text-align: center;
+  }
+
+  .section--footer .copyright {
+    margin: auto;
+    text-align: center;
   }
 }
 
@@ -918,8 +1045,14 @@ button {
   .section--portfolio .card--4 {
     margin-top: 0;
   }
-}
 
+  /* ======== max-md footer ======== */
+  .section--footer .container .row {
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    row-gap: 32px;
+  }
+}
 /* ======== min-md (992px) ======== */
 @media (width > 992px) {
   /* ======== min-md header ======== */
@@ -939,6 +1072,11 @@ button {
 
   .section--achievements .card:not(:last-child) {
     border-right: 1px solid rgba(196, 196, 196, 0.5);
+  }
+
+  /* ======== min-md footer ======== */
+  .section--footer .footer__social-media {
+    margin-bottom: 88px;
   }
 }
 
